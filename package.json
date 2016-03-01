@@ -1,0 +1,19 @@
+{
+  "name": "tryout-expressjs",
+  "version": "1.0.0",
+  "description": "Express test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasbuechel/tryout-expressjs.git"
+  },
+  "author": "Jonas Büchel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonasbuechel/tryout-expressjs/issues"
+  },
+  "homepage": "https://github.com/jonasbuechel/tryout-expressjs#readme"
+}
