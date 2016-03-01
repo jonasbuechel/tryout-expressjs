@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jonasbuechel/tryout-expressjs/issues"
   },
-  "homepage": "https://github.com/jonasbuechel/tryout-expressjs#readme"
+  "homepage": "https://github.com/jonasbuechel/tryout-expressjs#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
