@@ -1,0 +1,10 @@
+{
+    "first" : {
+        "title"         :   "My first blog entry",
+        "description"   :   "This is my description to the first blog entry"
+    },
+    "second" : {
+        "title"         :   "My second blog entry",
+        "description"   :   "This is my description to the second blog entry"
+    }
+}
