@@ -1,7 +1,13 @@
-/*jslint node: true*/
 /*jslint node: true, debug: true*/
 
 'use strict';
+
+
+/* -------------------------------------------------------------------------------------------------------------
+/ HOW TO RUN THIS SERVER:
+/ Console Tab 1: node-inspector                 npm node-inspector needed (let's debug node app at runtime)
+/ Console Tab 2: nodemon --debug src/app.js     npm nodemon needed (node-wrapper for auto-refreshing)
+---------------------------------------------------------------------------------------------------------------- */
 
 var express     = require('express');
 var blogPosts   = require('./mockdata/posts.json');
