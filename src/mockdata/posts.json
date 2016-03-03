@@ -1,9 +1,9 @@
 {
-    "first" : {
+    "first-entry" : {
         "title"         :   "My first blog entry",
         "description"   :   "This is my description to the first blog entry"
     },
-    "second" : {
+    "second-entry" : {
         "title"         :   "My second blog entry",
         "description"   :   "This is my description to the second blog entry"
     }
