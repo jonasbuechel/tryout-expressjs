@@ -25,6 +25,12 @@ app.get('/blog', function(req, res){
     res.send(blogPosts); 
 });
 
+//ROUTE BLOG-POST WITH PARAM
+app.get('/blog/post/:id', function(req, res){
+    debugger;
+    res.send(blogPosts); 
+});
+
 app.listen(serverPort, function(){
     console.log('Ther frontend express server startet at localhost:'+serverPort);
 });
