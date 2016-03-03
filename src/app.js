@@ -27,8 +27,12 @@ app.get('/blog', function(req, res){
 
 //ROUTE BLOG-POST WITH PARAM
 app.get('/blog/post/:id', function(req, res){
-    debugger;
-    res.send(blogPosts); 
+    
+    var postId      = req.params.id;
+    var actualPost  = blogPosts[postId];
+        
+    //debugger;
+    res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
 });
 
 app.listen(serverPort, function(){
