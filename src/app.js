@@ -15,9 +15,12 @@ var serverPort  = 3000;
 
 var app = express();
 
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/templates');
+
 //ROUTE HOME "/"
 app.get('/', function(req, res){
-    res.send("<h1>HOME</h1><p>This is my home"); 
+    res.render('index'); 
 });
 
 //ROUTE BLOG "/blog"
