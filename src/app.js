@@ -18,6 +18,12 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/templates');
 
+//404 PAGE
+var render404page = function(res){
+    res.status(404);
+    res.render('404-not-found');  
+};
+
 //ROUTE HOME "/"
 app.get('/', function(req, res){
     res.render('index'); 
@@ -28,14 +34,21 @@ app.get('/blog', function(req, res){
     res.send(blogPosts); 
 });
 
-//ROUTE BLOG-POST WITH PARAM
-app.get('/blog/post/:id', function(req, res){
+//ROUTE BLOG-POST WITH OPTIONAL PARAM
+app.get('/blog/post/:id?', function(req, res){
     
     var postId      = req.params.id;
     var actualPost  = blogPosts[postId];
         
-    //debugger;
-    res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
+    if(!!postId && !!actualPost){
+        
+        //debugger;
+        res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
+        
+    }else{
+        render404page(res);
+    }
+   
 });
 
 app.listen(serverPort, function(){
