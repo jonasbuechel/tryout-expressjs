@@ -39,12 +39,12 @@ app.get('/blog/post/:id?', function(req, res){
     
     var postId      = req.params.id;
     var actualPost  = blogPosts[postId];
+    //debugger;
         
     if(!!postId && !!actualPost){
         
-        //debugger;
-        res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
-        
+        //res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
+        res.render('blog-post', {postId: postId, post: actualPost});
     }else{
         render404page(res);
     }
