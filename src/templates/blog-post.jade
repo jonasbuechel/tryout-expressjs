@@ -1,8 +1,8 @@
-doctype html
-html(lang="de")
-    head
-        title #{post.title}
-    body
-        h1 Blog Post with id "#{postId}"
-        h2 My Blogpost: #{post.title}
-        p #{post.description}
+extends ./layouts/layout-default.jade
+
+block head
+    title #{post.title}
+block content
+    h1 Blog Post with id "#{postId}"
+    h2 My Blogpost: #{post.title}
+    p #{post.description}

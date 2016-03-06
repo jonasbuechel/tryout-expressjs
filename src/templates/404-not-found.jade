@@ -1,7 +1,7 @@
-doctype html
-html(lang="de")
-    head
-        title 404 not found
-    body
-        h1 Ooops! 404 not found :(
-        p The requested page can't be found by our friendly server.
+extends ./layouts/layout-404.jade
+
+block head
+    title 404 not found
+block content
+    h1 Ooops! 404 not found :(
+    p The requested page can't be found by our friendly server.
