@@ -4,7 +4,9 @@ html(lang="de")
         block head
     body
         block body
-            header HEADER
+            header
+                include ../partials/_header.jade
             article
                 block content
-            footer FOOTER
+            footer
+                include ../partials/_footer.jade
