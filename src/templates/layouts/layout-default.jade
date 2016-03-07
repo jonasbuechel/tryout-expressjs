@@ -1,8 +1,7 @@
 doctype html
 html(lang="de")
     head
-        link(rel='stylesheet', href='/static/css/test.css')
-        block head
+        include ../partials/_head.jade
     body
         block body
             header
@@ -11,3 +10,4 @@ html(lang="de")
                 block content
             footer
                 include ../partials/_footer.jade
+        include ../partials/_body-end.jade
