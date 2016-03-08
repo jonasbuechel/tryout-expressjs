@@ -34,7 +34,7 @@ app.get('/', function(req, res){
 
 //ROUTE BLOG "/blog"
 app.get('/blog', function(req, res){
-    res.send(blogPosts); 
+    res.render('blog-overview', {posts: blogPosts});
 });
 
 //ROUTE BLOG-POST WITH OPTIONAL PARAM

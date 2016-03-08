@@ -1,0 +1,12 @@
+extends ./layouts/layout-default.jade
+
+block append head
+    title Blog overview
+block content
+    h1 Blog Overview
+    ul
+    each post, key in posts
+        div
+            h2 #{post.title}
+            p #{post.description}
+            a(href='/blog/post/'+key) zum Eintrag
