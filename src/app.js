@@ -41,6 +41,8 @@ var createRoute = function(objRoute){
     console.log(templateData);
     //CREATE ROUTE
     app.get(objRoute.url, function(req, res){
+        //ADD URL TO TEMPLATE DATA
+        templateData.currentUrl = req.url;
         res.render(objRoute.template, templateData); 
     });
     

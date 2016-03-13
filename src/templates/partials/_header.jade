@@ -2,4 +2,8 @@ nav
     ul
         each navItem in navigation
             li
-                a(href=navItem.url, title=navItem.title) #{navItem.title}
+                if currentUrl === navItem.url
+                    span #{navItem.title}
+                else
+                    a(href=navItem.url, title=navItem.title) #{navItem.title}
+                    
