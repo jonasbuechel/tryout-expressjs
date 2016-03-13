@@ -51,6 +51,10 @@ var createRoute = function(objRoute){
 //CALL createRoute FOR EACH ROUTE IN routes.json
 routes.arrRoutes.forEach(createRoute);
 
+//JSON API FOR BLOG-POSTS
+app.get('/blog-api', function(req, res){
+    res.json(blogPosts);
+});
 
 //SPECIAL ROUTE BLOG-POST WITH OPTIONAL PARAM
 app.get('/blog/post/:id?', function(req, res){
