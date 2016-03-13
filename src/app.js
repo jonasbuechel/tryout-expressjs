@@ -60,7 +60,7 @@ app.get('/blog/post/:id?', function(req, res){
     if(!!postId && !!actualPost){
         
         //res.send('<h1>' + actualPost.title + '</h1>' + '<p>' + actualPost.description + '</p>'); 
-        res.render('blog-post', {postId: postId, post: actualPost});
+        res.render('blog-post', {navigation: routes.arrRoutes, postId: postId, post: actualPost});
     }else{
         render404page(res);
     }
