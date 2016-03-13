@@ -1,0 +1,17 @@
+{
+    "arrRoutes":
+        [
+            {
+                "id": "home",
+                "url": "/",
+                "title": "Home",
+                "template": "index"
+            },
+            {
+                "id": "blog",
+                "url": "/blog",
+                "title": "Blog",
+                "template": "blog-overview"
+            }
+        ]
+}

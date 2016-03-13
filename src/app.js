@@ -10,6 +10,7 @@
 ---------------------------------------------------------------------------------------------------------------- */
 
 var express     = require('express');
+var routes      = require('./env/routes.json');
 var blogPosts   = require('./mockdata/posts.json');
 var serverPort  = 3000; 
 
@@ -27,17 +28,30 @@ var render404page = function(res){
     res.render('404-not-found');  
 };
 
-//ROUTE HOME "/"
-app.get('/', function(req, res){
-    res.render('index'); 
-});
+//GENERATE ROUTES FROM JSON
+var createRoute = function(objRoute){
+    
+    //ADD DATA TO ROUTE
+    var templateData;
+    
+    if(objRoute.id === 'blog'){
+        templateData = {posts: blogPosts};
+    }else{
+        templateData = {};
+    }
+    
+    //CREATE ROUTE
+    app.get(objRoute.url, function(req, res){
+        res.render(objRoute.template, templateData); 
+    });
+    
+};
 
-//ROUTE BLOG "/blog"
-app.get('/blog', function(req, res){
-    res.render('blog-overview', {posts: blogPosts});
-});
+//CALL createRoute FOR EACH ROUTE IN routes.json
+routes.arrRoutes.forEach(createRoute);
 
-//ROUTE BLOG-POST WITH OPTIONAL PARAM
+
+//SPECIAL ROUTE BLOG-POST WITH OPTIONAL PARAM
 app.get('/blog/post/:id?', function(req, res){
     
     var postId      = req.params.id;
@@ -54,6 +68,7 @@ app.get('/blog/post/:id?', function(req, res){
    
 });
 
+//START SERVER
 app.listen(serverPort, function(){
     console.log('Ther frontend express server startet at localhost:'+serverPort);
 });
