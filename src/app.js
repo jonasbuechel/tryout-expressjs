@@ -32,14 +32,13 @@ var render404page = function(res){
 var createRoute = function(objRoute){
     
     //ADD DATA TO ROUTE
-    var templateData;
+    var templateData = {};
+        templateData.navigation = routes.arrRoutes;
     
     if(objRoute.id === 'blog'){
-        templateData = {posts: blogPosts};
-    }else{
-        templateData = {};
+        templateData.posts = blogPosts;
     }
-    
+    console.log(templateData);
     //CREATE ROUTE
     app.get(objRoute.url, function(req, res){
         res.render(objRoute.template, templateData); 

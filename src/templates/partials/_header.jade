@@ -1,6 +1,5 @@
 nav
     ul
-        li 
-            a(href='/', title='Home') Home
-        li 
-            a(href='/blog', title='Blog') Blog
+        each navItem in navigation
+            li
+                a(href=navItem.url, title=navItem.title) #{navItem.title}
